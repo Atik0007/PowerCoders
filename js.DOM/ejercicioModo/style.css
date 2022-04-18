@@ -1,0 +1,68 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  --primary-color: #42C2FF;
+  --secondary-color: #85F4FF;
+  --tertiary-color: #EFFFFD;
+}
+html.dark{
+  --primary-color: #C996CC;
+  --secondary-color: #916BBF;
+  --tertiary-color: #1C0C5B;
+}
+
+header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 100px;
+background-color: var(--primary-color);
+padding: 0 1rem;
+}
+
+header h1{
+  font-size: 2rem;
+  color: var(--tertiary-color);
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+img{
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) saturate(100%) invert(83%) sepia(31%) saturate(931%) hue-rotate(161deg) brightness(105%) contrast(105%);
+  cursor: pointer;
+}
+.dark-light{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  gap: 1rem;
+  
+}
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100vh;
+  background-color: var(--secondary-color);
+  padding: 1rem 1rem;
+  gap:1rem;
+}
+main h2{
+  font-size: 2rem;
+  color: var(--tertiary-color);
+  font-weight: bold;
+  margin-left: 20px;
+}
+main p{
+  font-size: 1.5rem;
+  color: var(--tertiary-color);
+  font-weight: bold;
+  margin-left: 20px;
+}
