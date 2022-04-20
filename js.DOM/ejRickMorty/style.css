@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.character {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img {
+    width: 100px   
+}
+
+.image,.name,.status,.species{
+    border : 1px solid black;
+    width: 100px;
+    height: 100px;
+    display: grid;
+    place-items: center;
+}
+.status {
+    background-color: #f2f2f2;
+}
+
+
