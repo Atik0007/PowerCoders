@@ -1,8 +1,7 @@
 'use strict';
 
 /* A partir de los datos de la API https://rickandmortyapi.com/api/character
-generar una ficha por cada personaje que devuelva que incluya, por lo menos, la imagen,
-el nombre, el estado y la especie.
+
 
 
 BONUS: algún elemento diferenciará visualmente el estado*/
@@ -96,51 +95,47 @@ async function getCharacterData() {
     'https://rickandmortyapi.com/api/character'
   );
 
-  console.log(results);
+  return results;
 }
 
 getCharacterData();
 
-// algún elemento diferenciará visualmente el estado
+// generar una ficha por cada personaje que devuelva que incluya, por lo menos, la imagen, el nombre, el estado y la especie
 
-async function getCharacterData() {
-  const { results } = await getData(
-    'https://rickandmortyapi.com/api/character'
-  );
-  for (let i = 0; i < results.length; i++) {
-    const { name, status, species, image } = results[i];
+const main = document.querySelector('main');
 
-    const container = document.createElement('div');
-    container.classList.add('character');
-
-    const img = document.createElement('img');
-    img.src = image;
-
-    const nameContainer = document.createElement('div');
-    nameContainer.classList.add('name');
-    nameContainer.innerText = name;
-
-    const statusContainer = document.createElement('div');
-    statusContainer.classList.add('status');
-    statusContainer.innerText = status;
-
-    const speciesContainer = document.createElement('div');
-    speciesContainer.classList.add('species');
-    speciesContainer.innerText = species;
-
-    container.appendChild(img);
-    container.appendChild(nameContainer);
-    container.appendChild(statusContainer);
-    container.appendChild(speciesContainer);
-
-    document.body.appendChild(container);
-
-    if (status === 'Alive') {
-      statusContainer.style.backgroundColor = 'green';
-    } else if (status === 'Dead') {
-      statusContainer.style.backgroundColor = 'red';
-    } else {
-      statusContainer.style.backgroundColor = 'yellow';
-    }
-  }
+function generateCard({ image, name, status, species }) {
+  return `
+  <article>
+      <header>
+        <img src="${image}" alt="Imagen de ${name}">
+        <h2>${name}</h2>
+      </header>
+      <section>
+        <p class="${status}">${status}</p>
+        <p>${species}</p>
+      </section>
+    </article>
+  `;
 }
+
+async function appendCards() {
+  const chars = await getCharacterData();
+
+  let htmlString = '';
+  for (const char of chars) {
+    const charCardHTML = generateCard(char);
+    htmlString += charCardHTML;
+  }
+
+  main.innerHTML = htmlString;
+}
+
+appendCards();
+
+// color change on hover
+
+const cards = document.querySelectorAll('.Alive');
+const cardsColor = document.querySelectorAll('.article');
+
+console.log(cards);

@@ -2,27 +2,96 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-.character {
-    position: relative;
+:root{
+    --main-color: white;
+    --background-color: rgba(0,0,0,0.5);
+    --hover-background-color: rgba(0,0,0,0.7);
+    --box-shadow-color: 0px 0px 10px black;
+    --hover-box-shadow-color: 0px 0px 10px red;
+    
+}
+
+body{
+    background-image: url(https://www.teahub.io/photos/full/12-124362_wallpaper-rick-morty-with-image-resolution-pixel-rick.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-img {
-    width: 100px   
+    width: 100%;
+    height: 15vh;
 }
 
-.image,.name,.status,.species{
-    border : 1px solid black;
-    width: 100px;
-    height: 100px;
+/* cards */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    gap: 2rem;
+}
+ article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 450px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: var(--box-shadow-color);
+ }
+ article:hover{
+    box-shadow: var(--hover-box-shadow-color);
+    background-color: var(--hover-background-color);
+ }
+
+ main header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     display: grid;
-    place-items: center;
-}
-.status {
-    background-color: #f2f2f2;
-}
+    align-self: center;
+    margin: 0;
+    
+ }
 
+ h2{
+     padding: 1rem 0;
+    color: var(--main-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+ }
+ 
+ p{
+     font-size: 1rem;
+        color: var(--main-color);
+        text-align: center;
+        line-height: 2;
 
+ }
+
+ .Alive{
+    color: #03fc5e;
+  }
+  
+  .Dead{
+    color: rgb(201, 0, 0);
+  }
+  
+  .unknown{
+    color: rgb(211, 208, 19);
+  }
