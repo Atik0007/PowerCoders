@@ -1,0 +1,35 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+table{
+  margin: 2rem;
+  background: lightblue;
+  border-collapse: collapse;
+}
+
+th,td{
+  padding: 1rem;
+  border: 1px solid white;
+}
+
+thead{
+  background: rgb(0, 126, 168);
+  color: white;
+}
+
+tbody th {
+  font-weight: normal;
+}
+
+td{
+  text-align: center;
+}
+
+.lower{
+  background: blue;
+  color: white;
+}
+
