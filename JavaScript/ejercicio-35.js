@@ -59,7 +59,7 @@ const pizzas = [
 ];
 const combinaciones = [];
 for (let i = 0; i < pizzas.length; i++) {
-  for (let j = 0; j < pizzas.length; j++) {
+  for (let j = i; j < pizzas.length; j++) {
     if (i !== j) {
       combinaciones.push(`${pizzas[i]} y ${pizzas[j]}`);
     }
